@@ -3,20 +3,20 @@ using namespace std;
 
 int main(){
 	int a = 5;
-	int b = 'A';
-	int &c = b;
+	char b = 'A';
+	char &c = b;
 	int *x = &a;
-	int *y = &b;
+	char *y = &b;
 	int **z = &x;
-	cout << a << ' ' << char(b) << ' ' << char(c) << ' ' << x << ' ' << y << ' ' << z << endl;
-	cout << &a << ' ' << &b << ' ' << &c << ' ' << &x << ' ' << &y << ' ' << &z << endl;
+	cout << a << ' ' << b << ' ' << c << ' ' << x << ' ' << (int *)y << ' ' << z << endl;
+	cout << &a << ' ' << (int *)&b << ' ' << (int *)&c << ' ' << &x << ' ' << (int *)&y << ' ' << &z << endl;
 	c = 'F';
-	cout << a << ' ' << char(b) << ' ' << char(c) << ' ' << x << ' ' << y << ' ' << z << endl;
+	cout << a << ' ' << b << ' ' << c << ' ' << x << ' ' << (int *)y << ' ' << z << endl;
 	*y = 'W';
-	cout << a << ' ' << char(b) << ' ' << char(c) << ' ' << x << ' ' << y << ' ' << z << endl;
+	cout << a << ' ' << b << ' ' << c << ' ' << x << ' ' << (int *)y << ' ' << z << endl;
 	*x = 6;
-	cout << a << ' ' << char(b) << ' ' << char(c) << ' ' << x << ' ' << y << ' ' << z << endl;
+	cout << a << ' ' << b << ' ' << c << ' ' << x << ' ' << (int *)y << ' ' << z << endl;
 	**z = 7;
-	cout << a << ' ' << char(b) << ' ' << char(c) << ' ' << x << ' ' << y << ' ' << z << endl;
+	cout << a << ' ' << b << ' ' << c << ' ' << x << ' ' << (int *)y << ' ' << z << endl;
 	return 0;
 }
